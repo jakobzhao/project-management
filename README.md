@@ -1,6 +1,6 @@
-# Lab 1: Project management using GitHub
+# Project management using GitHub
 
-**Instructor:** Bo Zhao, 206.685.3846 or zhaobo@uw.edu; **Points Available** = 50
+**Author:** Bo Zhao, 206.685.3846 or zhaobo@uw.edu; **Points Available** = 50
 
 In this lab, we will briefly introduce how to set up the project environment, how to synchronize the course material, and more importantly to help you get familiar with the major operations on project management using GitHub. You will need to install the required software on your own PC or Mac, register a GitHub account, and then learn how to use git, visual studio code and github. To test the learning outcomes, you will be asked to create a GitHub repository to publish your resume page on the web. Okay, let us get started!
 
@@ -25,7 +25,6 @@ Visual Studio Code is a customizable IDE, so to fully prepare it for web program
 
 - Markdown Preview Enhanced
 - Live Server
-- Beautify (Recently this extension has been marked as "deprecated" as it is no longer being maintained. You may choose to install it or not. But we think this is still a very handy tool for quickly formatting and styling the code.)
 
 ![install-vscodeext](img/install-vscodeext.png)
 
@@ -45,13 +44,13 @@ A GitHub account is needed for managing and synchronizing your cloud based proje
 
 ## 2\. Download the course material
 
-I decide to host all course material on GitHub instead of Canvas system. By doing so, my goal is not to create extra trouble or sharp the learn curve. Instead, hosting on github will help you save a lot of time in downloading or migrating course materials, testing lab or lecture applications. Also, more practically, a lot of companies in the geospatial industries have already used github for their project management, such as [ESRI](https://github.com/Esri), [CartoBD](https://github.com/CartoDB), [MapBox](https://github.com/mapbox), and etc. To prepare you with the capabilities of using github, you will be familiar with an industry-level project management approach. In this lab, let us go through the procedure of downloading the course material as below.
+I decide to host all course material on GitHub instead of Canvas system. By doing so, my goal is not to create extra trouble or sharp the learn curve. Instead, hosting on github will help you save a lot of time in downloading or migrating course materials, testing lab or lecture applications. Also, more practically, a lot of companies in the geospatial industries have already used github for their project management, such as [ESRI](https://github.com/Esri), [CartoBD](https://github.com/CartoDB), [MapBox](https://github.com/mapbox), and etc. To prepare you with the capabilities of using github, you will be familiar with an industry-level project management approach. In this lab, let us go through the procedure of downloading the lab material as below.
 
-1\. On GitHub, each project is stored as a project repository. The repository for this course is located at [https://github.com/jakobzhao/geog458](https://github.com/jakobzhao/geog458). Please navigate to this url on a browser such as `Chrome`. As indicated by the course website url, this repository is created by me; my GitHub account name is `jakobzhao`, while the repository name is `geog458`.
+1\. On GitHub, each project is stored as a project repository. The repository for this Lab is located at [https://github.com/jakobzhao/project-management](https://github.com/jakobzhao/project-management). Please navigate to this url on a browser such as `Chrome`. As indicated by the course website url, this repository is created by me; my GitHub account name is `jakobzhao`, while the repository name is `project-management`.
 
 2\. On the front page of this repository, please click the green button named after `Clone or download` . To download the course material, you can click the `Download ZIP` button, as a result, a compressed file of the course material will be downloaded.
 
-3\. However, **we recommend you to clone this project repository**. You can get the **git url** of this repository on the same information window. The git url is [https://github.com/jakobzhao/geog458.git](https://github.com/jakobzhao/geog458.git).
+3\. However, **we recommend you to clone this project repository**. You can get the **git url** of this repository on the same information window. The git url is [https://github.com/jakobzhao/project-management.git](https://github.com/jakobzhao/project-management.git).
 
 4\. Next, open your working space on your local computer through command prompt if you are on Windows or through terminal if you are on a Mac. Here, the working space is just a centralized folder on your local computer where you can store your working materials. For me, I created a working folder to locally store my github repositories. For example, the working space of my computer is located as `C:\Workspace`. But it is up to you under which folder or path to put the workspace folder.
 
@@ -60,11 +59,11 @@ C:\Users\[windows_or_macosx_username]>cd C:\Workspace
 C:\Workspace>
 ```
 
-5\. Once acquiring the **git url** -  https://github.com/jakobzhao/geog458.git, we use the command `git clone` to clone the GitHub repository to your local computer.
+5\. Once acquiring the **git url** -  https://github.com/jakobzhao/project-management.git, we use the command `git clone` to clone the GitHub repository to your local computer.
 
  ```powershell
-C:\Workspace\>git clone https://github.com/jakobzhao/geog458.git
-Cloning into 'geog458'...
+C:\Workspace\>git clone https://github.com/jakobzhao/project-management.git
+Cloning into 'project-management'...
 remote: Counting objects: 962, done.
 remote: Compressing objects: 100% (750/750), done.
 remote: Total 962 (delta 214), reused 917 (delta 177), pack-reused 0Receiving objects:  99% (953/962), 158.77 MiB | 1.60 MiB/s
@@ -76,13 +75,13 @@ Checking out files: 100% (650/650), done.
 6\. To review the files and folders in the downloaded/cloned repository, you need to `cd` into the root directory of this repository. If you are on a Mac or Linux, type `ls` to check the file list of this repository, or try `dir` if you are on a Windows. Take windows for example.
 
 ```powershell
-C:\Workspace>cd geog458
+C:\Workspace>cd project-management
 
-C:\Workspace\geog458>dir
+C:\Workspace\project-management>dir
 Volume in drive C has no label.
 Volume Serial Number is 3E8C-9A9E
 
-Directory of C:\Workspace\geog458
+Directory of C:\Workspace\project-management
 
 09/20/2021  09:46 AM    <DIR>          .
 09/20/2021  09:46 AM    <DIR>          ..
@@ -96,15 +95,13 @@ Directory of C:\Workspace\geog458
                4 Dir(s)  898,906,136,576 bytes free
 ```
 
-In the root directory of geog458, there are folders like assets, labs, and files like readme.md and LICENSE.
-
-![](img/git-clone-geog595.gif)
+In the root directory of project-management, there are folders like assets, labs, and files like readme.md and LICENSE.
 
 7\. Next, we open the `readme.md` file using `Visual Studio Code`. To do that, make sure you have installed the program `Visual Studio Code` and the recommended packages, such as `Markdown Preview Enhanced`.
 
-Once `Visual Studio Code` is opened, press `ctrl+k` and then `ctrl+o` to open the open folder window, navigate to `geog458` folder from your workspace and press `select folder`. Then the `geog458` repo will be opened, and a file tree will be shown in the project list panel on the left of the vscode window.
+Once `Visual Studio Code` is opened, press `ctrl+k` and then `ctrl+o` to open the open folder window, navigate to `project-management` folder from your workspace and press `select folder`. Then the `project-management` repo will be opened, and a file tree will be shown in the project list panel on the left of the vscode window.
 
-**Note:** Your folder name should be geog458. The below screenshot is only to give you an idea of what window you will see.
+**Note:** Your folder name should be project-management. The below screenshot is only to give you an idea of what window you will see.
 
 ![](img/vscode-open-project.png)
 
@@ -115,15 +112,15 @@ In the project list panel, navigate to the `README.md` in the project tree panel
 8\. Once the course material is hosted on GitHub, it can be easily shared with a larger community. To synchronize the course material on remote GitHub repository to your local computer, you need to implement two sequential command lines `git checkout --force` and `git pull` in the root directory of the repository. Once the two commands are executed. An update notice will be shown as below.
 
 ```powershell
-C:\Workspace\geog458>git checkout --force
+C:\Workspace\project-management>git checkout --force
 Your branch is up-to-date with 'origin/main'.
 
-C:\Workspace\geog458>git pull
+C:\Workspace\project-management>git pull
 remote: Counting objects: 3, done.
 remote: Compressing objects: 100% (3/3), done.
 remote: Total 3 (delta 2), reused 0 (delta 0), pack-reused 0
 Unpacking objects: 100% (3/3), done.
-From https://github.com/jakobzhao/geog458
+From https://github.com/jakobzhao/project-management
    13b2cab..baf74b1  main     -> origin/main
 Updating 13b2cab..baf74b1
 Fast-forward
@@ -139,7 +136,7 @@ If you implement the above two commands in a Mac or Linux system, you might need
 
 9\. Before we jump to the next section, please:
 
-- Star the course repository [https://github.com/jakobzhao/geog458](https://github.com/jakobzhao/geog458) by pressing the `star` button on the top right, and;
+- Star the course repository [https://github.com/jakobzhao/project-management](https://github.com/jakobzhao/project-management) by pressing the `star` button on the top right, and;
 
 - Navigate to Dr. Zhao's front page at [https://github.com/jakobzhao](https://github.com/jakobzhao), and click the `Follow` button to be a follower.
 
@@ -370,6 +367,5 @@ Before submitting the deliverable, please make sure the **GitHub Pages** work pr
 * A list;
 
 5\. Create a website under this newly created repository. This website can be [an online resume](https://startbootstrap.com/themes/resume/), [a project gallary](https://startbootstrap.com/template/shop-homepage), [a project webiste](https://startbootstrap.com/themes/creative/), [an administrator dashboard](https://startbootstrap.com/themes/sb-admin-2/) and so on. I encourage you use any bootstrap5 template on [Start Bootstrap](https://startbootstrap.com/), and further modify the webpage if needed. You are not expected to make a complicated websites of several pages, but at least, a website represents some idea you planned to work on.(15 POINTS)
-
 
 **Note:** Lab assignments are required to be submitted electronically to Canvas unless stated otherwise. Efforts will be made to have them graded and returned within one week after they are submitted.Lab assignments are expected to be completed by the due date. ***A late penalty of at least 10 percentage units will be taken off each day after the due date.*** If you have a genuine reason(known medical condition, a pile-up of due assignments on other courses, ROTC,athletics teams, job interview, religious obligations etc.) for being unable to complete work on time, then some flexibility is possible. However, if in my judgment you could reasonably have let me know beforehand that there would likely be a delay, and then a late penalty will still be imposed if I don't hear from you until after the deadline has passed. For unforeseeable problems,I can be more flexible. If there are ongoing medical, personal, or other issues that are likely to affect your work all semester, then please arrange to see me to discuss the situation. There will be NO make-up exams except for circumstances like those above.
