@@ -1,25 +1,41 @@
 # Project management using GitHub
 
-**Author:** Bo Zhao, 206.685.3846 or zhaobo@uw.edu; **Points Available** = 50
+**Author:** Bo Zhao ([zhaobo@uw.edu](mailto:zhaobo@uw.edu)) &nbsp;|&nbsp; **Points Available:** 50
 
-In this lab, we will briefly introduce how to set up the project environment, how to synchronize the course material, and more importantly to help you get familiar with the major operations on project management using GitHub. You will need to install the required software on your own PC or Mac, register a GitHub account, and then learn how to use git, visual studio code and github. To test the learning outcomes, you will be asked to create a GitHub repository to publish your resume page on the web. Okay, let us get started!
+In this lab, we will set up the project environment, synchronize course materials, and walk through the major operations for managing projects on GitHub. You will install the required software on your own PC or Mac, register a GitHub account, and learn to use Git, Visual Studio Code, and GitHub. As a capstone, you will create a GitHub repository to publish your resume page on the web. Let's get started!
+
+## Learning objectives
+
+By the end of this lab, you will be able to:
+
+- Install and configure Git, Chrome, and Visual Studio Code for web development
+- Clone a GitHub repository to your local machine and keep it in sync with `git pull`
+- Author a Markdown document using standard syntax (headers, lists, links, images, blockquotes)
+- Stage, commit, and push changes to a GitHub repository using either the terminal or VS Code
+- Publish a static website from a GitHub repository using GitHub Pages
+
+## Prerequisites
+
+- A personal computer running Windows, macOS, or Linux
+- Administrator access to install software
+- A stable internet connection
 
 ## 1. Preparations
 
 ### 1.1 Environment setup
 For this practical exercise, you will use chrome, git and visual studio code.
 
-**Chrome:** is a freeware web browser developed by Google. It was first released on September 2, 2008 for Microsoft Windows, and was later ported to Linux, macOS, iOS and Android. Google Chrome is also the main component of Chrome OS, where it serves as a platform for running web apps. **Click [here](install-chrome.md) to see a demo on how to install Google Chrome**;
+**Chrome:** is a freeware web browser developed by Google that runs on Windows, macOS, Linux, iOS, and Android. See the [Chrome installation demo](install-chrome.md).
 
-**Git:** is a version control system (VCS) for tracking changes in computer files and coordinating work on those files among multiple people ([Click here to download](https://git-scm.com/downloads)). It is primarily used for source-code management in software development, but it can be used to keep track of changes in any set of files.  Git was created by **Linus Torvalds** in 2005 for development of the Linux kernel, with other kernel developers contributing to its initial development. **Click [here](install-git.md) to see how to install git**. **Note that if you are using macOS, you do not need to install git seperately - it is already integrated in the OS!**
+**Git:** is a version control system (VCS) for tracking changes in files and coordinating work among multiple people ([download Git](https://git-scm.com/downloads)). It was created by **Linus Torvalds** in 2005 for Linux kernel development, and has since become the industry standard for source-code management. See the [Git installation demo](install-git.md). **Note: if you are using macOS, you do not need to install Git separately — it ships with the Xcode Command Line Tools.**
 
 If **Git** is successfully installed, type `git` in command prompt (if you are a Windows user) or terminal (if you are a Mac or Linux user), the following screen will be shown up. Using `git`, you can synchronize the course materials and also publish your own GitHub repository.  We will talk about that later in this lab.
 
 ![](img/git.gif)
 
-**Visual Studio Code:** is a streamlined code editor with support for development operations like debugging, task running, and version control. It aims to provide just the tools a developer needs for a quick code-build-debug cycle and leaves more complex workflows to fuller featured IDEs, such as [Visual Studio IDE](https://visualstudio.microsoft.com/).  **Click [here](https://code.visualstudio.com/) to download and install Visual Studio Code on your computer.** If you want to work on a lab computer for your future labs, please **follow [this instruction](https://code.visualstudio.com/docs/editor/portable#:~:text=Portable%20Mode%201%20Enable%20Portable%20mode%20%23.%20%7C-,your%20platform.%20...%204%20TMP%20directory%20%23.%20) to see how to use VSCode in Portable Mode**.
+**Visual Studio Code:** is a streamlined code editor with built-in support for debugging, task running, and version control. It fills the gap between a plain text editor and a full IDE such as [Visual Studio IDE](https://visualstudio.microsoft.com/). [Download Visual Studio Code](https://code.visualstudio.com/). If you plan to work on a lab computer, see the [VS Code Portable Mode guide](https://code.visualstudio.com/docs/editor/portable).
 
-> **What is an IDE?** IDE (Integrated Development Environment) is a software application that provides comprehensive facilities to computer programmers for software development. An IDE normally consists of a source code editor, build automation tools, and a debugger. Most modern IDEs have intelligent code completion. The boundary between an integrated development environment and other parts of the broader software development environment is not well-defined. Sometimes a version control system, or various tools to simplify the construction of a graphical user interface (GUI), are integrated. Many modern IDEs also have a class browser, an object browser, and a class hierarchy diagram, for use in object-oriented software development.
+> **What is an IDE?** An IDE (Integrated Development Environment) is a software application that bundles the tools a developer needs — source code editor, build tools, debugger, and often version control integration and code completion — into a single interface.
 
 Visual Studio Code is a customizable IDE, so to fully prepare it for web programming, you will need to install additional packages. To do that, press `ctrl+shift+x`, or click on the "Extensions" button on the left tool bar. In this interface, please search and install the following recommended packages:
 
@@ -32,11 +48,11 @@ Visual Studio Code is a customizable IDE, so to fully prepare it for web program
 
 A GitHub account is needed for managing and synchronizing your cloud based project. If you do not have a GitHub account yet, please sign up at [https://www.github.com](https://www.github.com). Notably, you will need to choose a username. It is worth noting that, **this username will be used as a part of the domain name of your home github ['username'.github.io](). So, make sure this username is succinct, simple and English-character only. Apparently, an easily-recognized domain name is more popular.**
 
-**What is the differences between Git and GitHub?**
+**What is the difference between Git and GitHub?**
 
-**Git** is a version control system for tracking changes in computer files and coordinating work on those files among multiple people. It is primarily used for software development, but it can be used to keep track of changes in any files. Git was created by **Linus Torvalds** in 2005 for development of the Linux kernel, with other kernel developers contributing to its initial development.
+**Git** is the version control system itself — it runs locally on your computer and tracks changes to files.
 
-**GitHub** is a web-based Git or version control repository and Internet hosting service. GitHub offers both plans for private and free repositories on the same account which are commonly used to host open-source software projects. As of April 2016, GitHub reports having more than 14 million users and more than 35 million repositories, making it the largest host of source code in the world.
+**GitHub** is a web-based hosting service built around Git. It adds a browser UI, access control, issue tracking, pull requests, and collaboration features on top of Git. GitHub is today the world's largest host of source code, with over 100 million developers using the platform.
 
 ![](img/reg-github.gif)
 
@@ -44,13 +60,13 @@ A GitHub account is needed for managing and synchronizing your cloud based proje
 
 ## 2\. Download the course material
 
-I decide to host all course material on GitHub instead of Canvas system. By doing so, my goal is not to create extra trouble or sharp the learn curve. Instead, hosting on github will help you save a lot of time in downloading or migrating course materials, testing lab or lecture applications. Also, more practically, a lot of companies in the geospatial industries have already used github for their project management, such as [ESRI](https://github.com/Esri), [CartoBD](https://github.com/CartoDB), [MapBox](https://github.com/mapbox), and etc. To prepare you with the capabilities of using github, you will be familiar with an industry-level project management approach. In this lab, let us go through the procedure of downloading the lab material as below.
+I host all course material on GitHub rather than Canvas. The goal is not to steepen the learning curve — it's to save you time downloading and updating course materials, and to expose you to an industry-standard workflow. Many companies in the geospatial industry already use GitHub for project management, including [ESRI](https://github.com/Esri), [CartoDB](https://github.com/CartoDB), and [Mapbox](https://github.com/mapbox). Let's walk through the procedure for downloading the lab material.
 
 1\. On GitHub, each project is stored as a project repository. The repository for this Lab is located at [https://github.com/jakobzhao/project-management](https://github.com/jakobzhao/project-management). Please navigate to this url on a browser such as `Chrome`. As indicated by the course website url, this repository is created by me; my GitHub account name is `jakobzhao`, while the repository name is `project-management`.
 
-2\. On the front page of this repository, please click the green button named after `Clone or download` . To download the course material, you can click the `Download ZIP` button, as a result, a compressed file of the course material will be downloaded.
+2\. On the front page of this repository, click the green **`Code`** button. You can click `Download ZIP` to download a compressed copy of the course material.
 
-3\. However, **we recommend you to clone this project repository**. You can get the **git url** of this repository on the same information window. The git url is [https://github.com/jakobzhao/project-management.git](https://github.com/jakobzhao/project-management.git).
+3\. However, **we recommend you clone this project repository instead**. In the same dropdown, copy the **HTTPS URL** — it should be [https://github.com/jakobzhao/project-management.git](https://github.com/jakobzhao/project-management.git).
 
 4\. Next, open your working space on your local computer through command prompt if you are on Windows or through terminal if you are on a Mac. Here, the working space is just a centralized folder on your local computer where you can store your working materials. For me, I created a working folder to locally store my github repositories. For example, the working space of my computer is located as `C:\Workspace`. But it is up to you under which folder or path to put the workspace folder.
 
@@ -79,23 +95,29 @@ C:\Workspace>cd project-management
 
 C:\Workspace\project-management>dir
 Volume in drive C has no label.
-Volume Serial Number is 3E8C-9A9E
 
 Directory of C:\Workspace\project-management
 
-09/20/2021  09:46 AM    <DIR>          .
-09/20/2021  09:46 AM    <DIR>          ..
-09/20/2021  09:42 AM    <DIR>          assets
-09/20/2021  09:42 AM               128 index.html
-09/20/2021  09:46 AM    <DIR>          labs
-09/20/2021  09:42 AM            27,030 LICENSE
-09/20/2021  09:42 AM             2,267 project.md
-09/20/2021  09:42 AM            21,596 README.md
-               4 File(s)         51,021 bytes
-               4 Dir(s)  898,906,136,576 bytes free
+04/23/2026  09:24 AM    <DIR>          .
+04/23/2026  09:24 AM    <DIR>          ..
+04/17/2026  09:24 AM    <DIR>          img
+02/15/2026  09:24 AM                28 install-chrome.md
+02/15/2026  09:24 AM                25 install-git.md
+04/23/2026  09:24 AM            25,097 readme.md
+02/15/2026  09:24 AM               127 repo-git.md
+               4 File(s)         25,277 bytes
+               1 Dir(s)
 ```
 
-In the root directory of project-management, there are folders like assets, labs, and files like readme.md and LICENSE.
+Or, on macOS/Linux:
+
+```bash
+$ cd project-management
+$ ls
+img  install-chrome.md  install-git.md  readme.md  repo-git.md
+```
+
+In the root directory of `project-management`, you'll find an `img/` folder (lab screenshots and GIFs), `readme.md` (this document), and a few supporting installation guides.
 
 7\. Next, we open the `readme.md` file using `Visual Studio Code`. To do that, make sure you have installed the program `Visual Studio Code` and the recommended packages, such as `Markdown Preview Enhanced`.
 
@@ -109,12 +131,9 @@ In the project list panel, navigate to the `README.md` in the project tree panel
 
 ![](img/vscode-open-readme.gif)
 
-8\. Once the course material is hosted on GitHub, it can be easily shared with a larger community. To synchronize the course material on remote GitHub repository to your local computer, you need to implement two sequential command lines `git checkout --force` and `git pull` in the root directory of the repository. Once the two commands are executed. An update notice will be shown as below.
+8\. To synchronize the course material from GitHub to your local computer, run `git pull` from the root directory of the repository. The output will look like this:
 
 ```powershell
-C:\Workspace\project-management>git checkout --force
-Your branch is up-to-date with 'origin/main'.
-
 C:\Workspace\project-management>git pull
 remote: Counting objects: 3, done.
 remote: Compressing objects: 100% (3/3), done.
@@ -127,12 +146,11 @@ Fast-forward
  readme.md | 3 ++-
 ```
 
+Your local copy of the course material is now up to date.
 
-Now, the course material on your local computer is updated.
+> **Do not** run `git` with `sudo` on macOS/Linux — it rewrites file ownership and will cause permission errors on future pulls. If you hit a permission error, fix the folder ownership instead. Similarly, **do not** use `git checkout --force` as a sync shortcut: it silently discards any local changes you've made.
 
-If you implement the above two commands in a Mac or Linux system, you might need to add `sudo` before `git` to solve the lack-of-privilege issue. For example, `sudo git pull`, `sudo git checkout --force`. In general, the command `sudo` will assign the superuser privilege to the command line.
-
-**Note:** To ensure you are reading the latest version of the lecture or lab handouts, **you need to regularly synchronize the course material, especially so before the beginning of each class.** To do that, please just repeat this step to run the command combination `git checkout --force` and `git pull` again.
+**Note:** To ensure you have the latest version of the lecture or lab handouts, **synchronize regularly — especially before each class** — by running `git pull` again.
 
 9\. Before we jump to the next section, please:
 
@@ -243,39 +261,37 @@ Once you have drafted out your resume page in the `resume.md` file. You will upl
 
 #### 3.3.2 Git push
 
-You can also upload the `resume.md` through `git push` command on either command prompt or terminal.
+You can also upload `resume.md` via the `git push` command from a terminal or command prompt.
 
-1\. Since GitHub no longer accepts account passwords when authenticating Git operations when you are using command line tools since August 2021, we will need to use **a personal access token** as the password for pushing to the repository. Click **[here](https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/creating-a-personal-access-token)** to see how to create one for yourself.
+1\. **Authenticate first.** GitHub stopped accepting account passwords for Git operations in August 2021. The easiest modern option is to install the [GitHub CLI](https://cli.github.com/) and run `gh auth login` once — it handles the token exchange for you. If you prefer to do it manually, follow the [personal access token guide](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens) and paste the token when Git prompts for a password.
 
-2\. Download the repository  `https://github.com/[github_username]/[github_username].github.io`  following the instruction in Section 2 **"Download the course material"**.
+2\. Clone your `[github_username].github.io` repository to your workspace, following the instructions in Section 2.
 
-3\. In the root directory of the downloaded repository, please copy the edited `resume.md` to the root.
+3\. Copy your edited `resume.md` into the root of that local repository.
 
-4\. Next, you can push this change to the remote repository by implementing two command lines `git commit` and  `git push`. Since you have add new `untracked` files to this repository, you need to also implement another command line `git add` prior to the `git push`. As listed below.
+4\. From the repository root, stage, commit, and push your changes:
 
 ```powershell
-c:\Workspace\[github_username].github.io>git add -A
-c:\Workspace\[github_username].github.io>git commit -a -m "update the resume.md"
+c:\Workspace\[github_username].github.io>git add resume.md
+c:\Workspace\[github_username].github.io>git commit -m "add resume"
 c:\Workspace\[github_username].github.io>git push
-Username for 'https://github.com': `type the username`
-Password for 'https://geovizlabtest@github.com':`type your personal access token`
 ```
 
 **Note:** 
 
-1. If it is your first time using git, you may see the following prompt after you entered `git commit -a -m "update the resume.md"`. Because `git` targets at supporting collaborative work, it will ask users for identification information like name and email address. As prompted by `git`, you can use the command s to add your identification information.
+1. If this is your first time using Git, you will be prompted to set your identity before you can commit. Run these two commands once:
 
    ```
    git config --global user.email "you@example.com"
    git config --global user.name "Your Name"
    ```
 
-    `--global` means that git will automatically use the same information for all the other repositories in the future. If you remove it from the command, you will need to go through the same process again when you want to push to another repository.
+    The `--global` flag applies the setting to every repository on your machine. Drop it if you only want to set it for the current repository.
 
-2. If you use a Mac or Linux, you might need to add `sudo` in front of the command line to avoid the privilege deny issue. Besides, the command prompt or terminal may ask you for GitHub username and password, please be prepared with such information.
+2. Never run Git with `sudo` on macOS or Linux — it will change file ownership and break future pulls. If you hit a "permission denied" error, fix the directory ownership with `chown` instead.
 
 
-In a nutshell, to push a change from your local computer to GitHub, you will need to (1) `git clone` a repository from GitHub, (2) `git add` the untracked file to the repository, (3) `git commit` that you have made a change, and at last, (4) `git push` your changes to the GitHub repository.
+In a nutshell, to push a change from your local computer to GitHub, you (1) `git clone` the repository, (2) `git add` your new or modified files, (3) `git commit` with a message describing the change, and (4) `git push` to upload the commit.
 
 #### 3.3.3 Visual Studio Code based commit and push
 
@@ -297,75 +313,83 @@ You may be prompted to enter your authentication information during the process,
 
 ![vscode-git-auth](img/vscode-git-auth.png)
 
-> **Note:** As you might already aware of, the logics of approach 2 and 3 are very similar. The difference is, approach 2 works on a terminal/command prompt environment (a command-line user interface), while approach 3 works in Visual Studio Code(a graphic user interface).
+> **Note:** Approaches 2 and 3 have the same underlying logic — approach 2 runs in a terminal (command-line interface), while approach 3 runs in Visual Studio Code (graphical interface).
 >
-> Using either of the three approaches (3.3.1 to 3.3.3), you can upload your resume page or any other files to GitHub. Then, log on to this repository on GitHub to see whether the uploaded content is applied. However, the third one - `Visual Studio Code based commit and push`.** (3.3.3) is recommended.
+> Any of the three approaches (3.3.1–3.3.3) will upload your resume or any other files to GitHub. Check the repository page on GitHub to confirm the upload. Of the three, **approach 3.3.3 (VS Code) is recommended.**
 
 Now you have already known how to commit a change. In practice, you will use this operation very frequently. Other than committing changes, you may also need to synchronize, both fetch and push, the latest version of your GitHub repository.
 
 ### 3.4 Publish your repository
 
-Once the `resume.md` is uploaded to the root of the GitHub Repository, you can see this file listed in the root. Moreover, GitHub provide a new function named **GitHub Page** that converts a markdown file as a web page. Because your resume page is located at the root of the repository, you can directly access your resume page by visiting `http://[github_username].github.io/resume` if you implement the following steps.
+Once `resume.md` is in the root of your GitHub repository, you can turn on **GitHub Pages** to render it as a web page. GitHub Pages runs your repo through Jekyll, which converts Markdown files to HTML — so `resume.md` becomes `https://[github_username].github.io/resume`.
 
-> Note: it takes some time for GitHub server to refresh the cache and visualize a github page. So if you cannot see correct information on `http://[github_username].github.io/resume`, please try another browser or wait for a few minutes.
+> Note: GitHub can take from a few seconds up to a couple of minutes to build and publish the site. If the URL doesn't load right away, wait a moment and refresh, or try another browser.
 
-1\. please click the `Settings`tab on the top bar of the repository front page.
+1\. Click the **Settings** tab on the repository page.
 
-2\. On the `Pages` Section, make sure `main branch` is chosen in the `Source`  dropdown list.  Next, press the `Save` button.
+2\. In the left sidebar, open **Pages**. Under **Build and deployment → Source**, choose **Deploy from a branch**, then under **Branch** pick `main` and `/ (root)`, and click **Save**.
 
-3\. It usually takes several seconds to 1~2 minutes to apply this setting. If this setting is activated, you can read your resume page from `http://[github_username].github.io/resume`.
+3\. GitHub will build the site. Once the build finishes (usually under a minute), your resume will be live at `https://[github_username].github.io/resume`.
 
-**Note：** Similar to the step 8 in section 2, You can also update a local repository from a remote github repository using Visual Studio Code. To do that, right click the github operation status on the bottom bar, and select the option `Pull`. The github operation status can be either `Fetch`, `Pull`, `Push`, `Force Push`.
+**Note:** Similar to step 8 in Section 2, you can pull the latest remote changes into your local repository from Visual Studio Code. Click the sync/status indicator in the bottom status bar, or use the Source Control panel's **...** menu and choose **Pull**.
 
 ## 4. Website host using GitHub Pages
 
-Github allows its user to convert a repository as a website automatically. In this section, you will need to download a website template and modify it according to your needs, and upload it to the repository `https://github.com/[github_username]/[github_username].github.io` you have just created. After you finish this sesction, you can visit this webiste at `https://[github_username].github.io`.
+GitHub can serve a repository as a website. In this section, you will download a Bootstrap website template, modify it to your taste, and upload it to the `[github_username].github.io` repository you just created. Once you're done, the site will be live at `https://[github_username].github.io`.
 
 
-[Start Bootstrap](https://startbootstrap.com/) hosts a few website Boostrap-based templates. Bootstrap is a free and open-source CSS framework directed at responsive, mobile-first front-end web development. It contains CSS- and (optionally) JavaScript-based design templates for typography, forms, buttons, navigation and other interface components.
+[Start Bootstrap](https://startbootstrap.com/) hosts free Bootstrap-based templates. Bootstrap is an open-source CSS framework for responsive, mobile-first front-end development, with ready-made styles for typography, forms, buttons, navigation, and other UI components.
 
-1\. Visit url [https://startbootstrap.com/template/the-big-picture/](https://startbootstrap.com/template/the-big-picture/) and download this template.
+1\. Visit [https://startbootstrap.com/template/the-big-picture/](https://startbootstrap.com/template/the-big-picture/) and download the template.
 
 ![](img/big-picture.png)
 
-2\. Unzip/Extract the files from the zipped file and move to the local folder of the github repository `[github_username].github.io` in your workspace.
+2\. Unzip the archive and move its contents into your local `[github_username].github.io` folder.
 
-**Note:** If your local PC or MacOSX does not support the unzip function, please install [7zip](https://www.7-zip.org/download.html) if you are a windows user or [Keka](https://www.keka.io/en/) if you are a MacOSX user.
+**Note:** If your OS doesn't unzip out of the box, install [7-Zip](https://www.7-zip.org/download.html) on Windows or [Keka](https://www.keka.io/en/) on macOS.
 
-3\. Upload all the extracted files except the `readme.me` to the root of `https://github.com/[github_username]/[github_username].github.io`. To do so, please use the github synchronization function provided by VS Code **(refer to Section 3.3.3)**.
+3\. Upload all extracted files (except the template's own `readme.md`, which would overwrite yours) to the root of `https://github.com/[github_username]/[github_username].github.io`. Use the VS Code sync workflow from **Section 3.3.3**.
 
 ![](img/front-page.png)
 
-4\. After you successfully push the local repository to github. You can visit the website at `https://[github_username].github.io`. For example, I can vist the website at `https://geovizlabtest.github.io`. Usually, the URL will automaticaly navigate to the default page under the root of the repo. Usually, the name of the default page is `index.html`.
+4\. After the push succeeds, visit `https://[github_username].github.io` in a browser. For example, `https://geovizlabtest.github.io`. The URL automatically serves the repository's default page, which is typically `index.html`.
 
 ![](img/front-page-index.png)
 
-5\. Please modify the web page codes at the local repoistory. Once you push the changes to the github, please visit the url `https://geovizlabtest.github.io` to see whether the web pages have updated or not. If you want to get more familiar with web development, we encourage you walk through [w3school online web tutorials](https://www.w3schools.com/), especially the following items.
+5\. Edit the template files in your local repository, push the changes, and refresh `https://[github_username].github.io` to see them go live. If you want to get more comfortable with web development, work through the [W3Schools tutorials](https://www.w3schools.com/), especially:
 
 - [HTML](https://www.w3schools.com/html/default.asp)
 - [JavaScript](https://www.w3schools.com/js/default.asp)
 - [CSS](https://www.w3schools.com/css/default.asp)
-- [Boostrap 5](https://www.w3schools.com/bootstrap5/default.asp)
+- [Bootstrap 5](https://www.w3schools.com/bootstrap5/default.asp)
 
 
 ## 5. Deliverable
 
-Before submitting the deliverable, please make sure the **GitHub Pages** work properly. You are expected to submit the url of the GitHub repository to the **Canvas Dropbox** of this course. This url should be in the format of `https://www.github.com/[github_username]/[github_username].github.io`. To submit, check the item of this lab on the assignment tab, and then press the `Submit Assignment` button. Please contact the instructor if you have any difficulty in submitting the url link. Here are the grading criteria:
+Before submitting, confirm that **GitHub Pages** is working. Submit the URL of your GitHub repository to the **Canvas Dropbox** for this course. The URL should be in the format `https://github.com/[github_username]/[github_username].github.io`. To submit, open the lab item on the Assignments tab and click **Submit Assignment**. Contact the instructor if you have any trouble submitting.
 
-1\. A GitHub account is registered, You have followed the instructor's GitHub account and `star-ed` the course GitHub repository. (10 POINTS)
+### Grading criteria (50 points)
 
-2\. The repository should be named after `[github_username].github.io`. (5 POINTS)
+1\. A GitHub account is registered. You have followed the instructor's GitHub account and starred the course repository. **(10 pts)**
 
-3\. The `GitHub pages` function of the repository should work properly. That said, your resume can be visited from `https://[github_username].github.io/resume` (5 POINTS);
+2\. The repository is named `[github_username].github.io`. **(5 pts)**
 
-4\. To hone your skills in Markdown syntax, the resume could be built upon the template that was shown in `Section 3.2`, but we still encourage you customize your resume. In terms of the format, your online resume should contain (15 POINTS):
+3\. GitHub Pages is enabled, and your resume is reachable at `https://[github_username].github.io/resume`. **(5 pts)**
 
-* Different levels of headers;
-* A block quote;
-* Several url links;
-* One or several images; and
-* A list;
+4\. To exercise Markdown syntax, your resume may be based on the template in Section 3.2, but feel free to customize it. The resume should include **(15 pts)**:
 
-5\. Create a website under this newly created repository. This website can be [an online resume](https://startbootstrap.com/themes/resume/), [a project gallary](https://startbootstrap.com/template/shop-homepage), [a project webiste](https://startbootstrap.com/themes/creative/), [an administrator dashboard](https://startbootstrap.com/themes/sb-admin-2/) and so on. I encourage you use any bootstrap5 template on [Start Bootstrap](https://startbootstrap.com/), and further modify the webpage if needed. You are not expected to make a complicated websites of several pages, but at least, a website represents some idea you planned to work on.(15 POINTS)
+* Headers at multiple levels
+* A blockquote
+* Several hyperlinks
+* One or more images
+* A list
 
-**Note:** Lab assignments are required to be submitted electronically to Canvas unless stated otherwise. Efforts will be made to have them graded and returned within one week after they are submitted.Lab assignments are expected to be completed by the due date. ***A late penalty of at least 10 percentage units will be taken off each day after the due date.*** If you have a genuine reason(known medical condition, a pile-up of due assignments on other courses, ROTC,athletics teams, job interview, religious obligations etc.) for being unable to complete work on time, then some flexibility is possible. However, if in my judgment you could reasonably have let me know beforehand that there would likely be a delay, and then a late penalty will still be imposed if I don't hear from you until after the deadline has passed. For unforeseeable problems,I can be more flexible. If there are ongoing medical, personal, or other issues that are likely to affect your work all semester, then please arrange to see me to discuss the situation. There will be NO make-up exams except for circumstances like those above.
+5\. Build a website in the same repository. It can be [an online resume](https://startbootstrap.com/themes/resume/), [a project gallery](https://startbootstrap.com/template/shop-homepage), [a project website](https://startbootstrap.com/themes/creative/), [an admin dashboard](https://startbootstrap.com/themes/sb-admin-2/), or anything else. Use any Bootstrap 5 template from [Start Bootstrap](https://startbootstrap.com/) and modify it as needed. A complex multi-page site is not required — just something that represents an idea you want to work on. **(15 pts)**
+
+### Submission policy
+
+- Lab assignments are submitted electronically to Canvas unless stated otherwise. Grading will typically be completed within one week.
+- Assignments are due by the posted deadline. ***A late penalty of at least 10 percentage points per day will apply.***
+- If you have a genuine reason for needing an extension (documented medical condition, deadlines piling up across other courses, ROTC, athletics, job interviews, religious obligations, etc.), some flexibility is possible — **but you must contact the instructor before the deadline.** Unannounced late submissions will still incur the late penalty. For truly unforeseeable problems, more flexibility is possible.
+- If ongoing medical, personal, or other circumstances are likely to affect your work throughout the semester, please meet with the instructor to discuss accommodations.
+- There will be **no make-up exams** except under the circumstances above.
